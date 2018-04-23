@@ -298,7 +298,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(23456,function () {
-    console.log("server @ https://localhost:23456");
+app.listen(process.env.PORT||23456,function () {
+    console.log("server running");
 });
 

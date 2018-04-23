@@ -4,7 +4,7 @@ const LocalStrategy=require('passport-local').Strategy;
 console.log("passport");
 
 var mongoose=require('mongoose');
-mongoose.connect('mongodb://localhost:27017/myapp');
+mongoose.connect('mongodb://sample:123456@ds155299.mlab.com:55299/sastabazaar');
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);
