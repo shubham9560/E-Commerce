@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+<div class="container">
+    <div class="row">
+        <h1 class="text-capitalize text-center col"> Your Cart </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-10"></div>
+        <a class="col-2 btn btn-warning" href="index.html">
+            View Catalog
+        </a>
+    </div>
+<br><br>
+
+        {{#if products}}
+                <table class="table table-bordered" id="cart-table">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Increment</th>
+                        <th>Decrement</th>
+                    </tr>
+                    </thead>
+   {{#each products}}
+<tr>
+    <td>{{this.item.Title}}</td>
+    <td>{{this.price}}</td>
+    <td>{{this.qty}}</td>
+    <td><a href="/add-to-cart/{{this.ide}}" class="btn btn-primary">+</a></td>
+    <td><a href="/remove-from-cart/{{this.ide}}" class="btn btn-danger">-</a></td>
+</tr>
+   {{/each}}
+    </table>
+
+    <tr>
+        <td>Total price</td>
+        <td>{{this.totalPrice}}</td>
+    </tr>
+<br><br><br><br>
+  <a href="/checkout"><input type="button" value="CheckOut" class="btn btn-success"> </a>
+
+   </div>
+        {{else}}
+
+            <h>Add Something TO Cart </h>
+
+        {{/if}}
